@@ -26,9 +26,9 @@
     let city = document.querySelector('.location .city');
     city.innerText = `${weather.name}, ${weather.sys.country}`;
 
-    // let now = new Date();
-    // let date = document.querySelector(".location .date");
-    // date.innerText = dateBuilder(now);
+    let now = new Date();
+    let date = document.querySelector('.location .date');
+    date.innerText = dateBuilder(now);
 
     let temp = document.querySelector('.current .temp');
     temp.innerHTML = `${Math.round(weather.main.temp)}<span>\xB0C</span>`;
@@ -50,36 +50,36 @@
     humidity.innerText = `Humidity: ${weather.main.humidity}%`;
   }
 
-  // function dateBuilder(d) {
-  //   let months = [
-  //     'January',
-  //     'February',
-  //     'March',
-  //     'April',
-  //     'May',
-  //     'June',
-  //     'July',
-  //     'August',
-  //     'September',
-  //     'October',
-  //     'November',
-  //     'December',
-  //   ];
-  //   let days = [
-  //     'Sunday',
-  //     'Monday',
-  //     'Tuesday',
-  //     'Wednesday',
-  //     'Thursday',
-  //     'Friday',
-  //     'Saturday',
-  //   ];
+  function dateBuilder(d) {
+    let months = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
+    ];
+    let days = [
+      'Sunday',
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday',
+    ];
 
-  //   let day = days[d.getDay()];
-  //   let date = d.getDate();
-  //   let month = months[d.getMonth()];
-  //   let year = d.getFullYear();
+    let day = days[d.getDay()];
+    let date = d.getDate();
+    let month = months[d.getMonth()];
+    let year = d.getFullYear();
 
-  //   return `${day} ${date} ${month} ${year}`;
-  // }
+    return `${day} ${date} ${month} ${year}`;
+  }
 })();
