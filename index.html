@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon/favicon-16x16.png"
+    />
+
+    <link
+      rel="mask-icon"
+      href="favicon/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <link rel="manifest" href="favicon/site.webmanifest" />
+    <meta name="msapplication-TileColor" content="#000" />
+    <meta name="theme-color" content="#0073e6" />
+    <meta name="robots" content="noimageindex" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="weather.js" defer></script>
+
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div id="weather" class="weather-app neon-text gsap">
+    
+             <input
+        type="text"
+        autocomplete="off"
+        class="search-box"
+        placeholder="Search for a city..."
+      />
+      <div class="location">
+        <div class="city"></div>
+        <!-- <div class="date my-2">Thursday 10th August 2020</div>-->
+      </div>
+      <div class="current neon-text">
+   
+        <div class="temp"></div>
+        <div class="weather"></div>
+        <div class="hi-low"></div>
+        <div class="wind"></div>
+        <div class="humidity"></div>        
+
+      </div>
+    </div>
+  </div>
+
+    <script
+      src="https://kit.fontawesome.com/93b32f94da.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

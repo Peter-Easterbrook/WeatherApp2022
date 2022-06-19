@@ -1,0 +1,9 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Disallow:
+
+user-agent: Googlebot-Image
+disallow: / 
+
+
+Sitemap: https://pe-wd-resume.vercel.app/sitemap.xml

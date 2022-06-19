@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@200;300;400;500;600&display=swap');
+/* Set core root defaults */
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #0074d5 #000;
+}
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Encode Sans', sans-serif;
+  text-rendering: optimizeSpeed;
+  line-height: calc(1em + 0.5rem);
+  font-weight: 300;
+  user-select: none;
+  overflow: auto;
+  -webkit-font-smoothing: antialiased;
+  background-color: #000;
+  animation: fadeInAnimation ease-out 3s 1 forwards;
+}
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+body::-webkit-scrollbar {
+  width: 6px;
+}
+body::-webkit-scrollbar-track {
+  background: #000;
+}
+body::-webkit-scrollbar-thumb {
+  background: #0073e6;
+  border-radius: 10px;
+}
+body::-webkit-scrollbar-thumb:hover {
+  background: #0080ff;
+}
+::placeholder {
+  color: #6bb5ff;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #6bb5ff;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #6bb5ff;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul {
+  list-style: none;
+  padding: 0;
+}
+/* Make images easier to work with */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  hyphens: auto;
+  font-weight: 300;
+}
+.neon-text {
+  color: #abd5ff;
+  text-align: center;
+  animation: neon-text 1s ease-in-out infinite alternate;
+}
+
+@keyframes neon-text {
+  from {
+    text-shadow: 0 0 10px #0073e6, 0 0 20px #0073e6, 0 0 30px #0073e6,
+      0 0 40px #0073e6;
+  }
+  to {
+    text-shadow: 0 0 5px #49a4ff, 0 0 10px #49a4ff, 0 0 20px #49a4ff,
+      0 0 30px #49a4ff;
+  }
+}
+
+.weather-app {
+  position: relative;
+  max-width: 18rem;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 0.4rem;
+  font-weight: 100;
+  padding: 2rem;
+}
+
+.search-box {
+  width: 12rem;
+  margin: 1rem auto;
+  padding: 10px 15px;
+  background-color: #0153a5;
+  border: 1px solid #0073e6;
+  color: #6bb5ff;
+  outline: none;
+  border-radius: 3rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6) inset;
+  transition: 0.2s ease-out;
+}
+.search-box:hover {
+  background-color: #050030;
+}
+.location > .city {
+  font-size: 32px;
+  font-weight: 200;
+  margin: 1rem auto;
+}
+/* .location .date {
+  font-size: 1.3rem;
+  font-weight: 200;
+} */
+
+.current div {
+  padding: 1.2rem 0;
+  letter-spacing: 2px;
+}
+
+.current .temp {
+  font-size: 3rem;
+  font-weight: 200;
+}
+
+.current .weather,
+.current .hi-low,
+.current .humidity,
+.current .wind,
+.current .visibility,
+.current .feelsLike {
+  font-size: 1.6rem;
+  font-weight: 200;
+}
+@media screen and (max-width: 600px) {
+  .weather-app {
+    width: 100%;
+    height: 100%;
+  }
+}
