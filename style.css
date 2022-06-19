@@ -20,7 +20,7 @@ body {
   align-items: center;
   font-family: 'Encode Sans', sans-serif;
   text-rendering: optimizeSpeed;
-  line-height: calc(1em + 0.5rem);
+  line-height: calc(1em + 0.7rem);
   font-weight: 300;
   user-select: none;
   overflow: auto;
