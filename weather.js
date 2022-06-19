@@ -80,6 +80,7 @@
     let month = months[d.getMonth()];
     let year = d.getFullYear();
 
-    return `${day} ${date} ${month} ${year}`;
+    return `${day} ${date} ${month} `;
+    // Add ${year} if you want the year to be displayed
   }
 })();
