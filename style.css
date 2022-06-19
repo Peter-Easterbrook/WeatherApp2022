@@ -156,8 +156,9 @@ h6 {
   margin-bottom: 0.5rem;
 }
 .location > .date {
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   font-weight: 200;
+  letter-spacing: 2px;
 }
 
 .location div {
