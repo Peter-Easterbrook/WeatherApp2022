@@ -1,10 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@200;300;400;500;600&display=swap');
 /* Set core root defaults */
-html {
-  scroll-behavior: smooth;
-  scrollbar-width: thin;
-  scrollbar-color: #0074d5 #000;
-}
+
 *,
 ::after,
 ::before {
