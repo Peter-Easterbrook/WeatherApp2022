@@ -18,15 +18,15 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: 'Encode Sans', sans-serif;
   text-rendering: optimizeSpeed;
   line-height: calc(1em + 0.7rem);
-  font-weight: 300;
+  font-weight: 200;
   user-select: none;
   overflow: auto;
+  font-family: 'Encode Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   background-color: #000;
-  animation: fadeInAnimation ease-out 3s 1 forwards;
+  animation: fadeInAnimation 2s ease-out 1 forwards;
 }
 @keyframes fadeInAnimation {
   0% {
@@ -37,32 +37,13 @@ body {
   }
 }
 
-body::-webkit-scrollbar {
-  width: 6px;
+html::-webkit-scrollbar {
+  display: none;
 }
-body::-webkit-scrollbar-track {
-  background: #000;
-}
-body::-webkit-scrollbar-thumb {
-  background: #0073e6;
-  border-radius: 10px;
-}
-body::-webkit-scrollbar-thumb:hover {
-  background: #0080ff;
-}
-::placeholder {
+
+html::placeholder {
   color: #050030;
   opacity: 1; /* Firefox */
-}
-
-:-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
-  color: #050030;
-}
-
-::-ms-input-placeholder {
-  /* Microsoft Edge */
-  color: #050030;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
@@ -70,20 +51,13 @@ ul {
   list-style: none;
   padding: 0;
 }
-/* Make images easier to work with */
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-}
+
 input,
 button,
 textarea,
 select {
   font: inherit;
+  font-weight: 400;
 }
 
 a {
@@ -99,7 +73,7 @@ h5,
 h6 {
   overflow-wrap: break-word;
   hyphens: auto;
-  font-weight: 300;
+  font-weight: 200;
 }
 .neon-text {
   color: #abd5ff;
@@ -128,7 +102,6 @@ h6 {
   margin: 0 auto;
   text-align: center;
   border-radius: 0.4rem;
-  font-weight: 100;
   padding: 2rem;
 }
 
@@ -140,7 +113,6 @@ h6 {
   outline: none;
   border-radius: 3rem;
   font-size: 1.2rem;
-  font-weight: 300;
   margin-bottom: 2rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6) inset;
   transition: 0.2s ease-out;
@@ -152,12 +124,11 @@ h6 {
 }
 .location > .city {
   font-size: 32px;
-  font-weight: 200;
   margin-bottom: 0.5rem;
 }
 .location > .date {
   font-size: 1.6rem;
-  font-weight: 200;
+
   letter-spacing: 2px;
 }
 
@@ -173,7 +144,6 @@ h6 {
 
 .current .temp {
   font-size: 3rem;
-  font-weight: 200;
 }
 
 .current .weather,
@@ -183,7 +153,6 @@ h6 {
 .current .visibility,
 .current .feelsLike {
   font-size: 1.6rem;
-  font-weight: 200;
 }
 @media screen and (max-width: 600px) {
   .weather-app {
