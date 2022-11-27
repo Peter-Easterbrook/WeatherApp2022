@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@200;300;400;500;600&display=swap');
 /* Set core root defaults */
-
+root {
+  --neon-text-shadow: 0 0 5px #0073e6, 0 0 10px #0073e6, 0 0 20px #0073e6,
+    0 0 30px #0073e6;
+}
 *,
 ::after,
 ::before {
@@ -74,10 +77,11 @@ h6 {
 .neon-text {
   color: #abd5ff;
   text-align: center;
-  animation: neon-text 1s ease-in-out infinite alternate;
+  text-shadow: var(--neon-text-shadow);
+  /* animation: neon-text 1s ease-in-out infinite alternate; */
 }
 
-@keyframes neon-text {
+/* @keyframes neon-text {
   from {
     text-shadow: 0 0 10px #0073e6, 0 0 20px #0073e6, 0 0 30px #0073e6,
       0 0 40px #0073e6;
@@ -86,7 +90,7 @@ h6 {
     text-shadow: 0 0 5px #49a4ff, 0 0 10px #49a4ff, 0 0 20px #49a4ff,
       0 0 30px #49a4ff;
   }
-}
+} */
 
 .weather-app {
   position: relative;
@@ -123,7 +127,7 @@ h6 {
   letter-spacing: 2px;
 }
 .location > .city {
-  font-size: clamp(2.6rem, 2.6vw, 3rem);
+  font-size: clamp(2rem, 2.6vw, 2.4rem);
   margin-bottom: 0.5rem;
 }
 

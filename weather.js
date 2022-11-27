@@ -11,6 +11,7 @@
   function setQuery(evt) {
     if (evt.key === 'Enter') {
       getResults(searchbox.value);
+      searchbox.value = '';
     }
   }
 
