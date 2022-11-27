@@ -48,6 +48,8 @@
 
     let humidity = document.querySelector('.current .humidity');
     humidity.innerText = `Humidity: ${weather.main.humidity}%`;
+    let visibility = document.querySelector('.current .visibility');
+    visibility.innerText = `Visibility: ${weather.visibility}m`;
   }
 
   function dateBuilder(d) {
