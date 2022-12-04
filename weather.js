@@ -2,7 +2,7 @@
   //Weather app
   const api = {
     key: 'e8b8edf5374f56949a098e6695b3f908',
-    base: 'https://api.openweathermap.org/data/3.0/',
+    base: 'https://api.openweathermap.org/data/2.5/',
   };
 
   const searchbox = document.querySelector('.search-box');
