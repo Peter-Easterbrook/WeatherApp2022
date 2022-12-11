@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@200;300;400;500;600&display=swap');
-/* Set core root defaults */
-root {
-  --neon-text-shadow: 0 0 5px #0073e6, 0 0 10px #0073e6, 0 0 20px #0073e6,
-    0 0 30px #0073e6;
-}
+
 *,
 ::after,
 ::before {
@@ -12,14 +8,13 @@ root {
 * {
   margin: 0;
 }
+
 body {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  place-items: center;
   text-rendering: optimizeSpeed;
-  line-height: calc(1em + 0.7rem);
-  font-weight: 200;
+  line-height: calc(1em + 0.6rem);
   user-select: none;
   overflow: auto;
   font-family: 'Encode Sans', sans-serif;
@@ -40,29 +35,13 @@ html::-webkit-scrollbar {
   display: none;
 }
 
-html::placeholder {
-  color: #050030;
-  opacity: 1; /* Firefox */
-}
-
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul {
-  list-style: none;
-  padding: 0;
-}
-
 input,
 button,
 textarea,
 select {
   font: inherit;
-  font-weight: 400;
 }
 
-a {
-  text-decoration: none;
-  color: #000;
-}
 p,
 h1,
 h2,
@@ -77,20 +56,9 @@ h6 {
 .neon-text {
   color: #abd5ff;
   text-align: center;
-  text-shadow: var(--neon-text-shadow);
-  /* animation: neon-text 1s ease-in-out infinite alternate; */
+  font-weight: 200;
+  letter-spacing: 3px;
 }
-
-/* @keyframes neon-text {
-  from {
-    text-shadow: 0 0 10px #0073e6, 0 0 20px #0073e6, 0 0 30px #0073e6,
-      0 0 40px #0073e6;
-  }
-  to {
-    text-shadow: 0 0 5px #49a4ff, 0 0 10px #49a4ff, 0 0 20px #49a4ff,
-      0 0 30px #49a4ff;
-  }
-} */
 
 .weather-app {
   position: relative;
@@ -108,23 +76,24 @@ h6 {
 .search-box {
   width: 16rem;
   padding: 10px 15px;
-  background-color: #abd5ff;
-  border: 1px solid #0073e6;
+  color: #abd5ff;
+  border: 1px solid #abd5ff;
   outline: none;
   border-radius: 3rem;
   font-size: 1.2rem;
   margin-bottom: 2rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6) inset;
+  background-color: #000;
+  box-shadow: 0 6px 10px rgba(171, 213, 255, 0.6) inset;
   transition: 0.2s ease-out;
 }
-.search-box:hover,
-.search-box:focus {
-  background-color: #020015;
-  color: #cee7ff;
+.search-box::placeholder {
+  opacity: 0.5;
+  color: #abd5ff;
 }
+
 .location > .date {
   font-size: clamp(1.4rem, 2.2vw, 2rem);
-  letter-spacing: 2px;
+  line-height: calc(1em + 0.7rem);
 }
 .location > .city {
   font-size: clamp(2rem, 2.6vw, 2.4rem);
@@ -133,12 +102,10 @@ h6 {
 
 .location div {
   padding: 1.2rem 0;
-  letter-spacing: 2px;
 }
 
 .current div {
   padding: 1.2rem 0;
-  letter-spacing: 2px;
 }
 
 .current .temp {
