@@ -120,6 +120,9 @@ h6 {
 .current .humidity {
   font-size: clamp(1.4rem, 2.2vw, 2rem);
 }
+.current .visibility {
+  line-height: calc(1em + 0.7rem);
+}
 @media screen and (max-width: 600px) {
   .weather-app {
     width: 100%;
