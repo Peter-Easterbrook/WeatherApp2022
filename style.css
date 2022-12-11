@@ -9,6 +9,11 @@
   margin: 0;
 }
 
+html,
+body {
+  background-color: #000;
+}
+
 body {
   min-height: 100vh;
   display: grid;
@@ -19,7 +24,6 @@ body {
   overflow: auto;
   font-family: 'Encode Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
-  background-color: #000;
   animation: fadeInAnimation 2s ease-out 1 forwards;
 }
 @keyframes fadeInAnimation {
