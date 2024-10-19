@@ -4,9 +4,8 @@
   "description": "HTML Weather App",
   "main": "weather.js",
   "scripts": {
-    "start": "live-server",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+    "start": "live-server"
+     },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Peter-Easterbrook/WeatherApp2022.git"
