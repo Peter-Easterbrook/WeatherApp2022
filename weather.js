@@ -1,8 +1,9 @@
 (() => {
+  require('dotenv').config();
   //Weather app
   const api = {
-    key: 'e8b8edf5374f56949a098e6695b3f908',
-    base: 'https://api.openweathermap.org/data/2.5/',
+    key: process.env.OPEN_WEATHER_API_KEY,
+    base: 'https://api.openweathermap.org/data/3.0/onecall',
   };
 
   const searchbox = document.querySelector('.search-box');
@@ -10,47 +11,57 @@
 
   function setQuery(evt) {
     if (evt.key === 'Enter') {
-      getResults(searchbox.value);
+      getCoordinates(searchbox.value);
       searchbox.value = '';
     }
   }
 
-  function getResults(query) {
-    fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
-      .then((weather) => {
-        return weather.json();
-      })
+  function getCoordinates(city) {
+    fetch(
+      `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${api.key}`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        const { lat, lon } = data.coord;
+        getResults(lat, lon);
+      });
+  }
+
+  function getResults(lat, lon) {
+    fetch(`${api.base}?lat=${lat}&lon=${lon}&units=metric&appid=${api.key}`)
+      .then((response) => response.json())
       .then(displayResults);
   }
 
   function displayResults(weather) {
     let city = document.querySelector('.location .city');
-    city.innerText = `${weather.name}, ${weather.sys.country}`;
+    city.innerText = `${weather.timezone}`;
 
     let now = new Date();
     let date = document.querySelector('.location .date');
     date.innerText = dateBuilder(now);
 
     let temp = document.querySelector('.current .temp');
-    temp.innerHTML = `${Math.round(weather.main.temp)}<span>\xB0C</span>`;
+    temp.innerHTML = `${Math.round(weather.current.temp)}<span>°C</span>`;
 
     let weather_el = document.querySelector('.current .weather');
     weather_el.innerText =
-      weather.weather[0].description.charAt(0).toUpperCase() +
-      weather.weather[0].description.slice(1);
+      weather.current.weather[0].description.charAt(0).toUpperCase() +
+      weather.current.weather[0].description.slice(1);
 
     let hilow = document.querySelector('.current .hi-low');
-    hilow.innerText = `${Math.round(weather.main.temp_min)}\xB0C / ${Math.round(
-      weather.main.temp_max
-    )}\xB0C`;
+    hilow.innerText = `${Math.round(
+      weather.daily[0].temp.min
+    )}°C / ${Math.round(weather.daily[0].temp.max)}°C`;
 
-    let wind = document.querySelector('.current .wind ');
-    wind.innerText = `Wind: ${weather.wind.speed}km/h`;
+    let wind = document.querySelector('.current .wind');
+    wind.innerText = `Wind: ${weather.current.wind_speed} km/h`;
 
     let humidity = document.querySelector('.current .humidity');
-    humidity.innerText = `Humidity: ${weather.main.humidity}%`;
+    humidity.innerText = `Humidity: ${weather.current.humidity}%`;
+
     let visibility = document.querySelector('.current .visibility');
-    visibility.innerText = `Visibility: ${weather.visibility}m`;
+    visibility.innerText = `Visibility: ${weather.current.visibility} m`;
   }
 
   function dateBuilder(d) {
@@ -83,7 +94,6 @@
     let month = months[d.getMonth()];
     let year = d.getFullYear();
 
-    return `${day} ${date} ${month} `;
-    // Add ${year} if you want the year to be displayed
+    return `${day} ${date} ${month} ${year}`;
   }
 })();
