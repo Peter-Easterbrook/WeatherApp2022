@@ -4,7 +4,7 @@
   "description": "HTML Weather App",
   "main": "weather.js",
   "scripts": {
-    "dev": "live-server"
+    "dev": "http-server -o -c-1"
   },
   "repository": {
     "type": "git",
@@ -16,10 +16,8 @@
     "url": "https://github.com/Peter-Easterbrook/WeatherApp2022/issues"
   },
   "homepage": "https://github.com/Peter-Easterbrook/WeatherApp2022#readme",
-  "dependencies": {
-    "dotenv": "^16.4.5"
-  },
   "devDependencies": {
-    "live-server": "^1.2.2"
+    "dotenv": "^17.4.2",
+    "http-server": "^14.1.1"
   }
 }

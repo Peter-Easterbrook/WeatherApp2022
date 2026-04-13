@@ -16,7 +16,7 @@
           '1. Visit: https://openweathermap.org/api\n' +
           '2. Sign up for free\n' +
           '3. Get your API key\n\n' +
-          'Enter your API key:'
+          'Enter your API key:',
       );
 
       if (userApiKey && userApiKey.trim()) {
@@ -63,7 +63,7 @@
   document.addEventListener('DOMContentLoaded', initializeApp);
 
   const searchbox = document.querySelector('.search-box');
-  searchbox.addEventListener('keypress', setQuery);
+  searchbox.addEventListener('keydown', setQuery);
 
   function setQuery(evt) {
     if (evt.key === 'Enter') {
@@ -114,7 +114,7 @@
 
     let hilow = document.querySelector('.current .hi-low');
     hilow.innerText = `${Math.round(weather.main.temp_min)}°C / ${Math.round(
-      weather.main.temp_max
+      weather.main.temp_max,
     )}°C`;
 
     let wind = document.querySelector('.current .wind');

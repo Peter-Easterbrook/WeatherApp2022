@@ -1,8 +1,5 @@
 const fs = require('fs');
-const dotenv = require('dotenv');
-
-// Load environment variables from .env file
-dotenv.config();
+require('dotenv').config({ quiet: true });
 
 // Read the weather.js file
 let weatherJs = fs.readFileSync('weather.js', 'utf8');
